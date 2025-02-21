@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>product</title>
+    <style>
+        @media screen {
+        .container{
+            width:400px;
+            height:550px;
+            background-color: bisque;
+            margin:20px auto;
+            padding:10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+        }
+        .img{
+            height:200px;
+            display:block;
+            margin: 10px auto;
+        }
+        .btn{
+            display:block;
+            margin: 40px auto;
+            height:30px;
+            width:100px;
+            cursor: pointer;
+            background-color: rgb(219, 165, 99);
+            border:none;
+        }
+       .operator{
+        height:40px;
+        cursor: pointer;
+       }
+       .btn-operator{
+        display:flex;
+        align-items: center;
+       justify-content: center;
+       }
+       .quantity-text{
+        font-size: 35px;
+        margin: 0 30px;
+       }
+       
+        
+       }
+      
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <img src="icecream.png" id="icecream-img" class="img"/>
+        <h1 class="heading">Ice-Cream</h1>
+
+        <p>Ice cream is a frozen dessert typically made from milk or cream that has been flavoured with a sweetener, either sugar or an alternative, and a spice, such as cocoa or vanilla, or with fruit, such as strawberries or peaches.</p>
+        <h2>price: ₹ 99/-</h2>
+
+     <div class="btn-operator">
+
+        <img src="minus.png" class="operator" id="minus" onclick="decrease()"/>
+
+        <span class="quantity-text" id="quantity-text">1</span>
+
+        <img src="plus.png" class="operator" id="plus" onclick="increase()"/>
+     </div>
+
+        <button class="btn">Add to Cart</button>
+    </div>
+
+    <script>
+  const quantityText = document.getElementById("quantity-text");
+
+function increase(){
+  let quantity = parseInt(quantityText.innerText)
+  if (quantity < 10) {
+  quantityText.innerText = ++quantity;
+}
+else{
+    alert("you can't add more than 10 items at a time");
+}
+}
+
+function decrease(){
+  let quantity = parseInt(quantityText.innertext);
+  if(quantity > 1){
+  quantityText.innerText = --quantity;
+} else {
+    alert("you can't decrease the quantity less than 1");
+}
+}
+
+    </script>
+</body>
+</html>
