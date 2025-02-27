@@ -57,18 +57,20 @@
 
      <div class="btn-operator">
 
-        <img src="minus.png" class="operator" id="minus" onclick="decrease()"/>
+        <img src="minus.png" class="operator" alt="minus" onclick="decrease()"/>
 
         <span class="quantity-text" id="quantity-text">1</span>
 
-        <img src="plus.png" class="operator" id="plus" onclick="increase()"/>
+        <img src="plus.png" class="operator" alt="plus" onclick="increase()"/>
      </div>
 
         <button class="btn">Add to Cart</button>
     </div>
 
     <script>
+        quantity = 10;
   const quantityText = document.getElementById("quantity-text");
+  
 
 function increase(){
   let quantity = parseInt(quantityText.innerText)
@@ -81,7 +83,7 @@ else{
 }
 
 function decrease(){
-  let quantity = parseInt(quantityText.innertext);
+  let quantity = parseInt(quantityText.innerText);
   if(quantity > 1){
   quantityText.innerText = --quantity;
 } else {
